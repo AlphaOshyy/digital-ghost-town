@@ -1,0 +1,50 @@
+:root{--bg:#05070b;--blue:#4ba3ff;--cyan:#82d9ff;--green:#8cffc1;--text:#dbe8f2;--muted:#657483}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--text)}
+button{font:inherit;color:inherit}
+#boot{position:fixed;inset:0;display:grid;place-items:center;background:#030406;z-index:50}
+.boot-inner{width:min(520px,88vw);text-align:center}
+.boot-mark{font-size:clamp(60px,15vw,110px);font-weight:900;letter-spacing:-.08em;color:#dff5ff;text-shadow:0 0 35px #2c8fff55}
+.boot-title{font-size:clamp(18px,4vw,30px);letter-spacing:.22em;margin-top:10px}
+.boot-sub{font-size:11px;color:#6c7b88;letter-spacing:.2em;margin-top:12px}
+.boot-line{margin:40px auto 30px;height:1px;background:#18222c;position:relative;text-align:left}
+.boot-line span{position:absolute;top:-23px;font-size:10px;color:var(--green);letter-spacing:.15em}
+.boot-line i{display:block;width:32%;height:1px;background:var(--cyan);box-shadow:0 0 15px var(--cyan);animation:load 2.4s infinite}
+#startBtn{background:transparent;border:1px solid #365269;padding:14px 38px;letter-spacing:.25em;cursor:pointer}
+#startBtn:hover{border-color:var(--cyan);box-shadow:0 0 24px #4ba3ff22}
+.boot-hint{font-size:9px;color:#47535e;margin-top:18px}
+@keyframes load{0%{width:0}60%{width:80%}100%{width:100%}}
+.hud{position:fixed;z-index:20;top:0;left:0;right:0;height:58px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(#030609ee,transparent);font-size:10px;letter-spacing:.15em}
+.brand{font-weight:800}.brand span{color:#657483;margin-left:15px}.status{color:#687783}.status span{display:inline-block;width:6px;height:6px;border-radius:50%;background:#ff4b61;box-shadow:0 0 10px #ff4b61;margin-right:7px}
+.town{position:relative;width:100vw;height:100vh;overflow:hidden;background:linear-gradient(#07111b 0 47%,#090d11 47%);perspective:700px}
+.sky{position:absolute;inset:0;background:radial-gradient(circle at 75% 20%,#19324a55,transparent 27%),linear-gradient(180deg,#07121d,#09111a 48%,#080b0e)}
+.moon{position:absolute;width:100px;height:100px;border-radius:50%;right:14%;top:12%;background:#d9e5e5;box-shadow:0 0 60px #bce8ff33;opacity:.65}
+.road{position:absolute;left:-10%;right:-10%;bottom:-18%;height:58%;background:#080a0d;clip-path:polygon(39% 0,61% 0,100% 100%,0 100%);border-top:1px solid #26333d}
+.town-label{position:absolute;top:68px;left:22px;font-size:9px;color:#536473;letter-spacing:.2em}
+.building{position:absolute;z-index:5;border:1px solid #293b4a;background:#0a1016e8;cursor:pointer;text-align:left;box-shadow:0 15px 50px #0008;transition:.25s;overflow:hidden}
+.building:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#8bdfff08,transparent 45%);pointer-events:none}
+.building:hover{border-color:#5caef0;transform:translateY(-4px);box-shadow:0 20px 60px #1c83c522}
+.building span{display:block;color:#4f718b;font-size:9px;padding:9px 11px 0}
+.building b{display:block;font-size:clamp(13px,2vw,18px);padding:3px 11px;color:#dcebf4}
+.building small{display:block;color:#668091;font-size:8px;padding:4px 11px 11px}
+.cafe{left:9%;top:29%;width:220px;height:150px}.arcade{right:10%;top:34%;width:190px;height:135px}.radio{left:34%;top:24%;width:170px;height:110px}.cinema{left:7%;top:54%;width:250px;height:120px}.house{right:9%;top:58%;width:210px;height:135px}
+.streetlight{position:absolute;z-index:3;width:2px;height:190px;background:#1d252b;bottom:19%}.streetlight:after{content:"";position:absolute;top:-4px;left:-18px;width:38px;height:38px;background:#b9e9ff22;border-radius:50%;box-shadow:0 0 45px 12px #a9e8ff14}.l1{left:27%}.l2{right:28%}
+.fog{position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#d5e8ff05);pointer-events:none}
+.rain{position:absolute;inset:0;opacity:.08;background-image:linear-gradient(110deg,transparent 48%,#bde6ff 49%,transparent 50%);background-size:17px 24px;animation:rain .35s linear infinite}
+@keyframes rain{to{background-position:17px 24px}}
+.town:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,#fff0 0,#fff0 2px,#fff1 3px);opacity:.07;mix-blend-mode:screen}
+.panel{position:fixed;z-index:30;right:0;top:0;height:100%;width:min(560px,100%);background:#060a0eee;border-left:1px solid #253746;box-shadow:-30px 0 100px #000c;padding:80px 34px 30px;overflow:auto;transform:translateX(100%);transition:transform .3s}
+.panel.open{transform:translateX(0)}.close{position:absolute;right:20px;top:20px;background:transparent;border:0;color:#728390;font-size:10px;letter-spacing:.15em;cursor:pointer}
+.panel h1{font-size:28px;letter-spacing:.08em;margin:0 0 8px}.panel .loc{color:#4d83a8;font-size:10px;letter-spacing:.18em}.terminal{margin-top:28px;border:1px solid #1d303d;background:#020507;padding:18px;color:#8cffc1;min-height:180px;font-size:12px;line-height:1.8;white-space:pre-wrap}.action{margin-top:15px;border:1px solid #284557;background:#09131b;padding:13px 16px;width:100%;text-align:left;cursor:pointer}.action:hover{border-color:#70c7ff}
+.input{margin-top:12px;width:100%;background:#030608;border:1px solid #263b48;padding:13px;color:#cfe8f5;outline:0}
+.toast{position:fixed;z-index:40;left:50%;bottom:105px;transform:translate(-50%,20px);background:#071019ee;border:1px solid #294252;padding:10px 15px;font-size:10px;color:#a7c8da;opacity:0;transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+.inventory{position:fixed;z-index:25;left:22px;bottom:20px;font-size:9px;color:#657583;letter-spacing:.12em}.inventory #items{display:flex;gap:7px;margin-top:7px}.item{border:1px solid #29404f;padding:6px 9px;color:#b8d8e8;background:#071018}
+.controls{display:none;position:fixed;z-index:25;left:50%;bottom:50px;transform:translateX(-50%);width:150px;height:110px}
+.controls button{position:absolute;width:48px;height:40px;background:#071018aa;border:1px solid #29404f}.controls button:active{background:#123044}
+.controls button[data-dir=up]{left:51px}.controls button[data-dir=left]{left:0;top:45px}.controls button[data-dir=down]{left:51px;top:45px}.controls button[data-dir=right]{right:0;top:45px}
+@media(max-width:700px){
+ .hud{padding:0 14px}.status{font-size:8px}.moon{width:65px;height:65px;right:12%;top:13%}
+ .building{transform:none!important}.cafe{left:7%;top:27%;width:43vw;height:120px}.arcade{right:7%;top:42%;width:39vw;height:105px}.radio{left:31%;top:20%;width:38vw;height:88px}.cinema{left:5%;top:57%;width:48vw;height:100px}.house{right:6%;top:66%;width:43vw;height:105px}
+ .building b{font-size:12px}.building small{font-size:7px}.town-label{left:14px}.panel{padding:75px 20px 130px}.controls{display:block}.inventory{bottom:12px;left:12px}.inventory span{font-size:8px}.inventory #items{max-width:45vw;flex-wrap:wrap}
+}
+@media(orientation:landscape) and (max-height:500px){.controls{display:none}.panel{padding-top:55px}.building{transform:scale(.8)}}
