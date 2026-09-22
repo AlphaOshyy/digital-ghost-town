@@ -1,66 +1,15 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="theme-color" content="#05070b">
-<title>Digital Ghost Town</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#05070b"><title>Digital Ghost Town</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<div id="boot">
-  <div class="boot-inner">
-    <div class="boot-mark">DGT</div>
-    <div class="boot-title">DIGITAL GHOST TOWN</div>
-    <div class="boot-sub">SRI LANKA / 03:17 AM</div>
-    <div class="boot-line"><span id="bootText">SIGNAL DETECTED</span><i></i></div>
-    <button id="startBtn" type="button" aria-label="Start Digital Ghost Town">START</button>
-    <div class="boot-hint">Best experienced with headphones</div>
-  </div>
-</div>
-
+<div id="boot"><div class="boot-inner"><div class="boot-mark">DGT</div><div class="boot-title">DIGITAL GHOST TOWN</div><div class="boot-sub">SRI LANKA / 03:17 AM</div><div class="boot-line"><span>SIGNAL DETECTED</span><i></i></div><button id="startBtn" type="button">ENTER TOWN</button><div class="boot-hint">HEADPHONES RECOMMENDED</div></div></div>
 <main id="game" hidden>
-  <header class="hud">
-    <div class="brand">DGT <span>03:17</span></div>
-    <div class="status"><span id="signal"></span> SIGNAL: LOST</div>
-  </header>
-
-  <section id="town" class="town">
-    <div class="sky"></div>
-    <div class="moon"></div>
-    <div class="rain"></div>
-    <div class="road"></div>
-    <div class="town-label">OLD COAST ROAD</div>
-
-    <button class="building cafe" data-location="cafe"><span>01</span><b>NET CAFE</b><small>OPEN</small></button>
-    <button class="building arcade" data-location="arcade"><span>02</span><b>ARCADE</b><small>POWER</small></button>
-    <button class="building radio" data-location="radio"><span>03</span><b>RADIO</b><small>OFF AIR</small></button>
-    <button class="building cinema" data-location="cinema"><span>04</span><b>CINEMA</b><small>SEALED</small></button>
-    <button class="building house" data-location="house"><span>05</span><b>HOUSE 17</b><small>LOCKED</small></button>
-
-    <div class="streetlight l1"></div><div class="streetlight l2"></div>
-    <div class="fog"></div>
-  </section>
-
-  <aside id="panel" class="panel" aria-hidden="true">
-    <button id="closePanel" class="close">CLOSE</button>
-    <div id="panelContent"></div>
-  </aside>
-
-  <div id="objective" class="objective">OBJECTIVE: EXPLORE THE TOWN</div>\n  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
-  <div id="controls" class="controls">
-    <button data-dir="up"></button>
-    <button data-dir="left"></button>
-    <button data-dir="down"></button>
-    <button data-dir="right"></button>
-  </div>
-
-  <div class="inventory">
-    <span>INVENTORY</span>
-    <div id="items"></div>
-  </div>
-</main>
-<script src="game.js"></script>
-</body>
-</html>
+<canvas id="world"></canvas>
+<div class="vignette"></div><div class="scanlines"></div>
+<header class="hud"><div class="brand">DGT <span>CHAPTER 01</span></div><div class="signal"><i></i><span id="signalText">SIGNAL LOST</span></div></header>
+<div class="objective" id="objective">EXPLORE THE TOWN</div>
+<div class="interact" id="interact">WALK CLOSER</div>
+<div class="inventory"><span>POCKET</span><div id="items"></div></div>
+<div class="touchpad" id="touchpad"><button data-dir="up">▲</button><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div>
+<aside id="panel" aria-hidden="true"><button id="closePanel">CLOSE</button><div id="panelContent"></div></aside>
+<div id="toast"></div>
+</main><script src="game.js"></script></body></html>
