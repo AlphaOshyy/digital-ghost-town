@@ -1,15 +1,42 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#05070b"><title>Digital Ghost Town</title><link rel="stylesheet" href="style.css"></head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#02060a">
+<title>Digital Ghost Town — 3D</title>
+<link rel="stylesheet" href="style.css?v=4">
+</head>
 <body>
-<div id="boot"><div class="boot-inner"><div class="boot-mark">DGT</div><div class="boot-title">DIGITAL GHOST TOWN</div><div class="boot-sub">SRI LANKA / 03:17 AM</div><div class="boot-line"><span>SIGNAL DETECTED</span><i></i></div><button id="startBtn" type="button">ENTER TOWN</button><div class="boot-hint">HEADPHONES RECOMMENDED</div></div></div>
+<div id="boot">
+  <div class="boot-grid"></div>
+  <div class="boot-inner">
+    <div class="boot-kicker">DGT // BUILD 04 // WEBGL</div>
+    <h1>DIGITAL GHOST TOWN</h1>
+    <div class="boot-sub">SRI LANKA / 03:17 AM</div>
+    <div class="boot-status"><span></span><b>3D WORLD READY</b></div>
+    <button id="startBtn" type="button">ENTER TOWN</button>
+    <small>WASD / ARROWS TO MOVE · E TO INTERACT</small>
+  </div>
+</div>
 <main id="game" hidden>
-<canvas id="world"></canvas>
-<div class="vignette"></div><div class="scanlines"></div>
-<header class="hud"><div class="brand">DGT <span>CHAPTER 01</span></div><div class="signal"><i></i><span id="signalText">SIGNAL LOST</span></div></header>
-<div class="objective" id="objective">EXPLORE THE TOWN</div>
-<div class="interact" id="interact">WALK CLOSER</div>
-<div class="inventory"><span>POCKET</span><div id="items"></div></div>
-<div class="touchpad" id="touchpad"><button data-dir="up">▲</button><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div>
-<aside id="panel" aria-hidden="true"><button id="closePanel">CLOSE</button><div id="panelContent"></div></aside>
-<div id="toast"></div>
-</main><script src="game.js"></script></body></html>
+  <canvas id="world"></canvas>
+  <div class="vignette"></div><div class="scanlines"></div>
+  <header class="hud">
+    <div class="brand">DGT <span>CHAPTER 01</span></div>
+    <div class="signal"><i></i><span>LIVE SIGNAL</span></div>
+  </header>
+  <div class="objective" id="objective">OBJECTIVE: EXPLORE THE TOWN</div>
+  <div class="location" id="location">OLD COAST ROAD</div>
+  <div class="crosshair"></div>
+  <div class="interact" id="interact">E / INTERACT</div>
+  <div class="inventory"><label>POCKET</label><div id="items"></div></div>
+  <div class="controls" id="controls">
+    <button data-key="up">W</button><button data-key="left">A</button><button data-key="down">S</button><button data-key="right">D</button>
+  </div>
+  <aside id="panel"><button id="closePanel">CLOSE</button><div id="panelContent"></div></aside>
+  <div id="toast"></div>
+</main>
+<script type="module" src="game.js?v=4"></script>
+</body>
+</html>
